@@ -11,7 +11,7 @@ class Midi_control extends CI_Controller {
         $this->load->helper(array('url','language'));
     
         $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
-    
+        $this->load->model('midi_control_model');
         $this->lang->load('auth');
     }
     
@@ -31,5 +31,20 @@ class Midi_control extends CI_Controller {
         {
             $this->load->view('midi_control_view');
         }
+    }
+    
+    public function login()
+    {
+        $this->load->view('login_view');
+    }
+    
+    public function program_change($channel)
+    {
+        if ($this->midi_control_model->changeProgram($channel) == TRUE){
+            header("HTTP/1.1 200 OK");
+        }else{
+            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
+        }
+        
     }
 }
