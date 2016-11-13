@@ -62,7 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="col-md-4">				
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon3">Channel</span>
-					<input type="number" min="1" max="128" class="form-control" aria-label="...">
+					<input type="number" min="1" max="128" class="form-control" aria-label="..." id="midi_channel">
 					<div class="input-group-btn">
 						<button type="button" class="btn btn-default dropdown-toggle" id="midi_instrument_show"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

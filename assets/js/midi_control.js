@@ -3,7 +3,7 @@ $(document).ready(function(){
     	if ($(this).text().length > 0){
     		$("#midi_instrument_show").html($(this).text() + ' <span class="caret"></span>');
 //    		alert($(this).attr("index"));
-    		$.post("Midi_control/program_change/" + $(this).attr("index")); 
+    		$.post("Midi_control/program_change/", {channel: $("midi_channel").val(), instrument: $(this).attr("index")}); 
     	}       
     });
 });

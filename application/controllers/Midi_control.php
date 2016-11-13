@@ -38,9 +38,11 @@ class Midi_control extends CI_Controller {
         $this->load->view('login_view');
     }
     
-    public function program_change($channel)
+    public function program_change()
     {
-        if ($this->midi_control_model->changeProgram($channel) == TRUE){
+        $channel = $this->input->post('channel');
+        $instrument = $this->input->post('instrument');
+        if ($this->midi_control_model->changeProgram($channel, $instrument) == TRUE){
             header("HTTP/1.1 200 OK");
         }else{
             header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
