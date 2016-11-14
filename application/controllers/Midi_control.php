@@ -46,7 +46,16 @@ class Midi_control extends CI_Controller {
             header("HTTP/1.1 200 OK");
         }else{
             header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
+        }     
+    }
+    
+    public function set_volume()
+    {
+        $volume = $this->input->post('volume');
+        if ($this->midi_control_model->setVolume($volume) == TRUE){
+            header("HTTP/1.1 200 OK");
+        }else{
+            header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
         }
-        
     }
 }

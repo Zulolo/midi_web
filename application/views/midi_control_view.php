@@ -59,7 +59,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="container"> 
 		<!-- Example row of columns -->
 		<div class="row">
-			<div class="col-md-4">				
+			<div class="col-md-4">	
+				<h2>Change instrument</h2>			
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon3">Channel</span>
 					<input type="number" min="1" max="128" class="form-control" aria-label="..." id="midi_channel">
@@ -221,14 +222,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<!-- /.col-lg-6 -->
 			<div class="col-md-4">
-				<h2>Sub Function 2</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
-					tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-					fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
-				<p>
-					<a class="btn btn-default" href="#" role="button">View details »</a>
-				</p>
+				<h2>Change volume</h2>
+				<div class="input-group">
+					<input type="number" class="form-control" min="0" max="128" placeholder="Volume" id="midi_volume">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button" id="midi_set_volume">Set</button>
+					</span>
+				</div>
 			</div>
 			<div class="col-md-4">
 				<h2>Sub Function 3</h2>
